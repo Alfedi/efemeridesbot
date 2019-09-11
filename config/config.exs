@@ -5,6 +5,12 @@ use Mix.Config
 config :ex_gram,
   token: {:system, "EFEMERIDES_TOKEN"}
 
+config :efemeridesbot, Efemeridesbot.Scheduler,
+  timezone: "Europe/Madrid",
+  jobs: [
+    {"0 9 * * *", {Efemeridesbot.Bot, :execute, []}}
+  ]
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,

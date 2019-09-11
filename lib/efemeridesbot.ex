@@ -8,7 +8,8 @@ defmodule Efemeridesbot do
 
     children = [
       ExGram,
-      {Efemeridesbot.Bot, [method: :polling, token: token]}
+      {Efemeridesbot.Bot, [method: :polling, token: token]},
+      Efemeridesbot.Scheduler
     ]
 
     opts = [strategy: :one_for_one, name: Efemeridesbot.Supervisor]

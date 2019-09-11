@@ -24,7 +24,9 @@ defmodule Efemeridesbot.MixProject do
     [
       {:ex_gram, github: "rockneurotiko/ex_gram", branch: "master"},
       {:jason, ">= 1.0.0"},
-      {:tesla, "~> 1.2.1"}
+      {:tesla, "~> 1.2.1"},
+      {:quantum, "~> 2.3"},
+      {:timex, "~> 3.0"}
     ]
   end
 end

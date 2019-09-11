@@ -22,6 +22,7 @@ defmodule Efemeridesbot.Bot do
     [{_, extract} | _] = Map.to_list(pages)
     res = Map.get(extract, "extract")
     msg = String.replace(res, ["<ul>", "</ul>", "<li>", "</li>"], "")
+    
     ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
   end
 end
