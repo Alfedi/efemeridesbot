@@ -11,7 +11,16 @@ defmodule Efemeridesbot.Api do
 
   def get(month_n, day) do
     month = month_convert(month_n)
-    Tesla.get(client(), "/w/api.php", query: [format: "json", action: "query", prop: "extracts", redirects: 1, titles: "Plantilla:Efemérides_-_#{day}_de_#{month}"])
+
+    Tesla.get(client(), "/w/api.php",
+      query: [
+        format: "json",
+        action: "query",
+        prop: "extracts",
+        redirects: 1,
+        titles: "Plantilla:Efemérides_-_#{day}_de_#{month}"
+      ]
+    )
   end
 
   def month_convert(num) do
@@ -29,6 +38,7 @@ defmodule Efemeridesbot.Api do
       11 => "noviembre",
       12 => "diciembre"
     }
+
     Map.get(map, num)
   end
 end

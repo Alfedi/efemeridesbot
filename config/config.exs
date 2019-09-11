@@ -2,9 +2,8 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :efemeridesbot,
+config :ex_gram,
   token: {:system, "EFEMERIDES_TOKEN"}
-
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
