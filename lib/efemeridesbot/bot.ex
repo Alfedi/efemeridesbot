@@ -21,7 +21,7 @@ defmodule Efemeridesbot.Bot do
     {:ok, %{"query" => %{"pages" => pages}}} = Jason.decode(body)
     [{_, extract} | _] = Map.to_list(pages)
     res = Map.get(extract, "extract")
-    msg = String.replace(res, ["<ul>", "</ul>", "<li>", "</li>"], "")
+    msg = String.replace(res, ["<ul>", "</ul>", "<li>", "</li>", "<i><b>", "</b></i>"], "")
     
     ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
   end
