@@ -25,7 +25,20 @@ defmodule Efemeridesbot.Bot do
     msg =
       String.replace(
         res,
-        ["<ul>", "</ul>", "<li>", "</li>", "<i><b>", "</b></i>", "<b><i>", "</i>/</b>"],
+        [
+          "<ul>",
+          "</ul>",
+          "<li>",
+          "</li>",
+          "<i><b>",
+          "</b></i>",
+          "<b><i>",
+          "</i>/</b>",
+          "<br>",
+          "</br>",
+          "<p>",
+          "</p>"
+        ],
         ""
       )
 
