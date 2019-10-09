@@ -40,6 +40,6 @@ defmodule Efemeridesbot.Bot do
         ""
       )
 
-    # ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
+    ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
   end
 end
