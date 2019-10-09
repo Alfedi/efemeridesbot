@@ -30,10 +30,8 @@ defmodule Efemeridesbot.Bot do
           "</ul>",
           "<li>",
           "</li>",
-          "<i><b>",
-          "</b></i>",
-          "<b><i>",
-          "</i>/</b>",
+          "<i>",
+          "</i>",
           "<br>",
           "</br>",
           "<p>",
@@ -42,6 +40,6 @@ defmodule Efemeridesbot.Bot do
         ""
       )
 
-    ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
+    # ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
   end
 end
