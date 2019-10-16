@@ -22,7 +22,7 @@ defmodule Efemeridesbot.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_gram, "~> 0.8"},
+      {:ex_gram, "~> 0.8.1"},
       {:jason, ">= 1.0.0"},
       {:tesla, "~> 1.2.1"},
       {:quantum, "~> 2.3"},
