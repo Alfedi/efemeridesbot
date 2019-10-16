@@ -9,7 +9,7 @@ defmodule Efemeridesbot.Api do
     Tesla.client(middlewares)
   end
 
-  def get(month_n, day) do
+  def get_extract(month_n, day) do
     month = month_convert(month_n)
 
     Tesla.get(client(), "/w/api.php",
@@ -18,6 +18,21 @@ defmodule Efemeridesbot.Api do
         action: "query",
         prop: "extracts",
         redirects: 1,
+        titles: "Plantilla:Efemérides_-_#{day}_de_#{month}"
+      ]
+    )
+  end
+
+  def get_image(month_n, day) do
+    month = month_convert(month_n)
+
+    Tesla.get(client(), "/w/api.php",
+      query: [
+        format: "json",
+        action: "query",
+        generator: "images",
+        prop: "imageinfo",
+        iiprop: "url",
         titles: "Plantilla:Efemérides_-_#{day}_de_#{month}"
       ]
     )

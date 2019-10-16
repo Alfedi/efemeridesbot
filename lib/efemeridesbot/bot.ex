@@ -15,9 +15,12 @@ defmodule Efemeridesbot.Bot do
   end
 
   def execute() do
+    # Text
     {:ok, %Tesla.Env{body: body}} =
-      Efemeridesbot.Api.get(Date.utc_today().month, Date.utc_today().day)
+      Efemeridesbot.Api.get_extract(Date.utc_today().month, Date.utc_today().day)
 
+    # Image
+    # TODO
     {:ok, %{"query" => %{"pages" => pages}}} = Jason.decode(body)
     [{_, extract} | _] = Map.to_list(pages)
     res = Map.get(extract, "extract")
@@ -40,6 +43,6 @@ defmodule Efemeridesbot.Bot do
         ""
       )
 
-    ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
+    ExGram.send_message("@PruebasAlfedi", msg, parse_mode: "html")
   end
 end
