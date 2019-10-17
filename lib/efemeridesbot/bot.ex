@@ -10,10 +10,6 @@ defmodule Efemeridesbot.Bot do
     answer(context, "Bienvenido al EfeméridesBot")
   end
 
-  def handle({:command, "send", _msg}, context) do
-    execute()
-  end
-
   def handle(_, _) do
     :no_reply
   end
