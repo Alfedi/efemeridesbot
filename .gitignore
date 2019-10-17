@@ -24,3 +24,6 @@ efemeridesbot-*.tar
 
 # Ignore tokens
 *.token
+
+# Ignore photos
+*.png

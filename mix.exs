@@ -14,7 +14,7 @@ defmodule Efemeridesbot.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :download],
       mod: {Efemeridesbot, []}
     ]
   end
@@ -26,7 +26,8 @@ defmodule Efemeridesbot.MixProject do
       {:jason, ">= 1.0.0"},
       {:tesla, "~> 1.2.1"},
       {:quantum, "~> 2.3"},
-      {:timex, "~> 3.0"}
+      {:timex, "~> 3.0"},
+      {:download, "~>0.0.4"}
     ]
   end
 end
