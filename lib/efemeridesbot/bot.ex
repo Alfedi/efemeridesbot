@@ -55,6 +55,9 @@ defmodule Efemeridesbot.Bot do
 
     Download.from(url, path: "photo.png")
 
+    # I need to resize all images to avoid problems with Telegram
+    System.cmd("convert", ["-resize", "1024x768", "photo.png", "photo.png"])
+
     # Send message
     ExGram.send_photo("@tal_dia_como_hoy", {:file, "photo.png"}, caption: msg, parse_mode: "html")
   end
