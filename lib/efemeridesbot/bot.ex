@@ -58,7 +58,10 @@ defmodule Efemeridesbot.Bot do
     # I need to resize all images to avoid problems with Telegram
     System.cmd("convert", ["-resize", "1024x768", "photo.png", "photo.png"])
 
+    # Send photo
+    ExGram.send_photo("@tal_dia_como_hoy", {:file, "photo.png"})
+    # Some messages are too long to fit in a caption
     # Send message
-    ExGram.send_photo("@tal_dia_como_hoy", {:file, "photo.png"}, caption: msg, parse_mode: "html")
+    ExGram.send_message("@tal_dia_como_hoy", msg, parse_mode: "html")
   end
 end
