@@ -27,3 +27,6 @@ efemeridesbot-*.tar
 
 # Ignore photos
 *.png
+
+# Ignore Elixir LS
+.elixir_ls/
