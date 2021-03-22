@@ -24,8 +24,8 @@ defmodule Efemeridesbot.Bot do
     res = Map.get(extract, "extract")
 
     msg =
-      String.replace(
-        res,
+      res
+      |> String.replace(
         [
           "<ul>",
           "</ul>",
@@ -42,6 +42,7 @@ defmodule Efemeridesbot.Bot do
         ],
         ""
       )
+      |> String.replace(~r/<!--[\s\S\n]*?-->/, "")
 
     # Image
     {:ok, %{body: bodyimg}} =

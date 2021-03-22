@@ -30,3 +30,6 @@ efemeridesbot-*.tar
 
 # Ignore Elixir LS
 .elixir_ls/
+
+# Ignore asdf
+.tool-versions
